@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "Concrete",
+  "version": "1.0",
+  "description": "Advanced automation for Wolvesville.",
+  "author": "Yuu",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "Concrete Control Panel",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "permissions": [
+    "tabs",
+    "scripting",
+    "storage",
+    "debugger"
+  ],
+  "host_permissions": [
+    "https://www.wolvesville.com/*",
+    "http://localhost:3000/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.wolvesville.com/*"],
+      "js": ["Concrete.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["Concrete.js"],
+      "matches": ["https://www.wolvesville.com/*"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  }
+}

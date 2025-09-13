@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+:root {
+    --sky-blue: #1a3c91;     /* tiefes Nachtblau */
+    --star-yellow: #ffd966;  /* warme Sternfarbe */
+    --grass-green: #3da35d;  /* Wiese */
+    --text-light: #f4f8ff;   /* sanftes Mondlicht */
+    --ok-green: #4cd964;
+    --err-red: #ff5e57;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 350px;
+    height: 350px;
+    font-family: "Poppins", sans-serif;
+    background: url('ConcreteBackground.png') no-repeat center/cover;
+    color: var(--text-light);
+    overflow: hidden;
+}
+
+/* Container mit leichtem Glow */
+.popup-container {
+    padding: 16px;
+    background: rgba(10, 18, 40, 0.78); /* durchsichtiges Nachtblau */
+    border-radius: 14px;
+    box-shadow: 0 0 25px rgba(255, 217, 102, 0.25); /* sanfter Sternenglanz */
+}
+
+/* Header */
+.popup-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, var(--star-yellow), var(--grass-green));
+    padding: 8px 12px;
+    border-radius: 10px;
+    color: var(--sky-blue);
+    font-size: 1.15rem;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.burger {
+    width: 20px;
+    height: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.burger::before,
+.burger::after,
+.burger div {
+    content: '';
+    display: block;
+    height: 2px;
+    background: var(--sky-blue);
+    border-radius: 1px;
+}
+.burger div {
+    margin: 3px 0;
+}
+
+/* Name and license */
+.name-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    font-size: 1rem;
+}
+
+#nameInput {
+    display: none;
+    font-size: 1rem;
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+}
+
+.name-edit button,
+.edit-icon {
+    background: none;
+    border: none;
+    color: var(--star-yellow);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.name-edit button {
+    display: none;
+}
+
+.license-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+.license-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: gray;
+}
+.license-dot.valid {
+    background: var(--ok-green);
+    box-shadow: 0 0 6px var(--ok-green);
+}
+.license-dot.invalid {
+    background: var(--err-red);
+    box-shadow: 0 0 6px var(--err-red);
+}
+.license-time {
+    margin-left: auto;
+    font-size: 0.85rem;
+    opacity: 0.85;
+}
+
+/* Play button */
+.play-pause-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 18px;
+}
+.wolf-background {
+    position: relative;
+    width: 130px;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wolf-background img {
+    width: 100%;
+    opacity: 0.9;
+}
+.play-button {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle at 30% 30%, var(--star-yellow), var(--grass-green));
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 12px rgba(255, 217, 102, 0.4);
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s;
+}
+.play-button:hover:not(:disabled) {
+    transform: scale(1.07);
+    box-shadow: 0 0 18px rgba(255, 217, 102, 0.7);
+}
+.play-button:disabled {
+    filter: grayscale(0.6) brightness(0.7);
+    cursor: not-allowed;
+}
+#playIcon {
+    font-size: 1.6rem;
+    color: var(--sky-blue);
+}
+
+/* Timer & bot status */
+.timer {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 14px 0 6px;
+    text-shadow: 0 0 4px rgba(0,0,0,0.4);
+}
+.bot-status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.95rem;
+    font-weight: 300;
+}
+.bot-status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: gray;
+}
+.bot-status-dot.running {
+    background: var(--ok-green);
+    box-shadow: 0 0 6px var(--ok-green);
+}

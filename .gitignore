@@ -1,0 +1,14 @@
+# Node.js
+node_modules/
+dist/
+.env
+
+# Logs
+*.log
+
+# VS Code Einstellungen
+.vscode/
+
+# Windows/Mac generierte Dateien
+Thumbs.db
+.DS_Store

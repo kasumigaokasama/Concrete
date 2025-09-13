@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Concrete v1.6.0</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+    <div class="popup-container">
+        <header class="popup-header">
+            <div class="burger"><div></div></div>
+            <div class="title">Concrete <span class="version">v1.6</span></div>
+        </header>
+
+        <!-- Name row -->
+        <section class="name-row">
+            <span id="activeName">Name</span>
+            <div class="name-edit">
+                <input type="text" id="nameInput" maxlength="14" />
+                <button id="confirmName">&#10003;</button>
+            </div>
+            <button id="editName" class="edit-icon">&#9998;</button>
+        </section>
+
+        <!-- License row -->
+        <div class="license-row">
+            <span class="license-dot" id="licenseDot"></span>
+            <span id="licenseText">Checking…</span>
+            <span id="licenseTime" class="license-time"></span>
+        </div>
+
+        <!-- Play / Pause -->
+        <section class="play-pause-section">
+            <div class="wolf-background">
+                <img src="wolf.png" alt="wolf" />
+                <button id="toggleBot" class="play-button" disabled><span id="playIcon">▶</span></button>
+            </div>
+        </section>
+
+        <div class="timer" id="timer">00:00:00</div>
+        <div class="bot-status">
+            <span class="bot-status-dot" id="botStatusDot"></span>
+            <span id="botStatusText">Disabled</span>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
