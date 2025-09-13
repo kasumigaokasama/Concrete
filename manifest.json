@@ -27,20 +27,32 @@
     "debugger"
   ],
   "host_permissions": [
-    "https://www.wolvesville.com/*",
-    "http://localhost:3000/*"
+    "http://localhost:3000/*",
+    "https://core.api-wolvesville.com/*",
+    "https://game-asia.api-wolvesville.com/*",
+    "https://game.api-wolvesville.com/*",
+    "https://www.wolvesville.com/*"
   ],
   "content_scripts": [
     {
-      "matches": ["https://www.wolvesville.com/*"],
-      "js": ["Concrete.js"],
+      "matches": [
+        "https://www.wolvesville.com/*"
+      ],
+      "js": [
+        "fetch-proxy.js",
+        "Concrete.js"
+      ],
       "run_at": "document_start"
     }
   ],
   "web_accessible_resources": [
     {
-      "resources": ["Concrete.js"],
-      "matches": ["https://www.wolvesville.com/*"]
+      "resources": [
+        "Concrete.js"
+      ],
+      "matches": [
+        "https://www.wolvesville.com/*"
+      ]
     }
   ],
   "background": {
