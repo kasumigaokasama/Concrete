@@ -1,54 +1,62 @@
 # Concrete 🐺
 
-Concrete is a Chrome extension that automates gameplay in [Wolvesville](https://www.wolvesville.com/). Paired with a small Node.js backend, it handles heartbeat monitoring, name verification, health checks, and can automatically farm XP for you in custom lobbies.
+Concrete is a Chrome extension that demonstrates automated interaction flows in controlled environments. Paired with a small Node.js backend, it handles heartbeat monitoring, name verification, health checks, and can simulate repetitive in-game actions in custom lobbies for testing or educational purposes.
+
+## ⚠️ Usage Notice
+
+This project is provided as-is for educational and experimental purposes.  
+Any use of this software is at the user’s own risk.  
+Users are responsible for ensuring their actions comply with the rules and policies of any platform.
 
 ## ✨ Features
 
-- 🎮 Wolvesville automation
-- 📈 Automatic XP farming in custom lobbies
-- ⚙️ Node.js server for backend tasks
+- Demonstrates automated interaction flows for Wolvesville  
+- Includes backend logic for monitoring and validation  
+- Can simulate repetitive tasks in controlled or test environments
 
 ## 🚀 Install the Extension
 
-1. Clone or download this repository.
-2. Open Google Chrome and navigate to `chrome://extensions`.
-3. Enable **Developer mode** in the top right.
-4. Click **Load unpacked** and select this project folder. The extension will appear in the list of installed extensions.
+1. Clone or download this repository.  
+2. Open Google Chrome and navigate to `chrome://extensions`.  
+3. Enable Developer mode in the top right.  
+4. Click **Load unpacked** and select this project folder.  
+5. The extension will appear in the list of installed extensions.
 
 ## 🛠️ Set Up and Run the Server
 
 The extension communicates with a local server located in the `abstract-bot-server` directory.
 
-1. **Install Node.js**  
-   Download and install [Node.js](https://nodejs.org/) for your platform if it is not already available.
+1. Install Node.js if not already installed.  
+2. Navigate to the server directory:
 
-2. **Navigate to the server directory**
+cd abstract-bot-server
 
-   ```cmd
-   cd abstract-bot-server
-   ```
+    Initialize and install dependencies (if starting from scratch):
 
-3. **Initialize and install dependencies**
+npm init -y
+npm install express cors
 
-   The repository already contains a `package.json`, but if you are setting up the project from scratch run:
+    Start the server:
 
-   ```cmd
-   npm init -y
-   npm install express cors
-   ```
+node server.js
 
-4. **Start the server**
+    The server listens on http://localhost:3000 by default.
 
-   ```cmd
-   node server.js
-   ```
+    To use a different port, set the PORT environment variable.
 
-   The server listens on `http://localhost:3000` by default. Set the `PORT` environment variable to use a different port.
+Windows batch options
 
-   On Windows you may start or configure the server using the provided batch files:
+    start-server.bat – Launch the server with logging.
 
-   - `start-server.bat` – launch the server with logging.
-   - `autostart-installer.bat` – configure the server to run at startup.
-   - `pm2-setup.bat` – run the server using PM2.
+    autostart-installer.bat – Configure the server to run at startup.
 
-With the server running and the extension loaded in Chrome, Concrete will connect to the backend for its automation features, including automatic XP farming.
+    pm2-setup.bat – Run the server using PM2.
+
+With the server running and the extension loaded in Chrome, Concrete demonstrates automated interaction flows for testing or educational purposes.
+⚙️ Notes
+
+    This project is for experimentation and learning only.
+
+    Users are solely responsible for how they use it.
+
+    Designed for controlled or test environments, not production or live gameplay.
