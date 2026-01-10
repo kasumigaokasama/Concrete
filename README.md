@@ -1,6 +1,7 @@
 # Concrete 🐺
 
-Concrete is a Chrome extension that demonstrates automated interaction flows in controlled environments. Paired with a small Node.js backend, it handles heartbeat monitoring, name verification, health checks, and can simulate repetitive in-game actions in custom lobbies for testing or educational purposes.
+Concrete is a Chrome extension that demonstrates automated interaction flows for a browser-based game client (Wolvesville) in controlled environments. Paired with a small Node.js backend, it handles heartbeat monitoring, name verification, and health checks, and can simulate repetitive interaction patterns for testing or educational purposes.
+
 
 ## ⚠️ Usage Notice
 
